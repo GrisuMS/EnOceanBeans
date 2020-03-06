@@ -4,6 +4,9 @@ public class FSB14Bean extends AktorBean {
 	private static final long serialVersionUID = 1624008736959842216L;
 	private int kanal = 0;
 	private boolean geschlossen = false;
+	private boolean offen = false;
+
+	private int aktuelleFahrtrichtung = 0;
 
 	private int zeitGeschlossen = 0;
 
@@ -14,6 +17,18 @@ public class FSB14Bean extends AktorBean {
 	private int zeitGeschlossen75 = 0;
 
 	private int wendezeit = 0;
+
+	public int getAktuelleFahrtrichtung() {
+		return aktuelleFahrtrichtung;
+	}
+
+	public void setAktuelleFahrtrichtung(int aktuelleFahrtrichtung) {
+		this.aktuelleFahrtrichtung = aktuelleFahrtrichtung;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
 
 	public int getKanal() {
 		return kanal;
@@ -29,6 +44,14 @@ public class FSB14Bean extends AktorBean {
 
 	public void setGeschlossen(boolean geschlossen) {
 		this.geschlossen = geschlossen;
+	}
+
+	public boolean isOffen() {
+		return offen;
+	}
+
+	public void setOffen(boolean offen) {
+		this.offen = offen;
 	}
 
 	public int getZeitGeschlossen() {

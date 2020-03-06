@@ -52,4 +52,50 @@ public class SystemBean implements Serializable {
 		return serialVersionUID;
 	}
 
+	/**
+	 * 
+	 * @param sensorAdresse Die Adresse des Sensors, der die Szene ausgelöst hat
+	 * @return
+	 */
+	public List<SzeneBean> findSzenen(String sensorAdresse) {
+		List<SzeneBean> liste = new ArrayList<SzeneBean>();
+		for (SzeneBean szene : this.szenen) {
+			for (FunktionBean funktion : szene.getAusloeser()) {
+				if (sensorAdresse.compareTo(funktion.getSensor().getAdresse()) == 0) {
+					liste.add(szene);
+				}
+			}
+		}
+		return liste;
+	}
+
+	public SensorBean findSensor(String adresseSensor) {
+		for (SensorBean sb : this.sensoren) {
+			if (adresseSensor.compareTo(sb.getAdresse()) == 0) {
+				return sb;
+			}
+		}
+		return null;
+	}
+
+	public AktorBean findAktor(String adresseAktor) {
+		for (AktorBean ab : this.aktoren) {
+			if (adresseAktor.compareTo(ab.getAdresse()) == 0) {
+				return ab;
+			}
+		}
+		return null;
+	}
+
+	public List<AktorBean> findAktorenWithSensorID(String sensorID) {
+		List<AktorBean> lab = new ArrayList<AktorBean>();
+		for (AktorBean ab : this.aktoren) {
+			for (SensorBean sb : ab.getSensoren()) {
+				if (sensorID.compareTo(sb.getAdresse()) == 0) {
+					lab.add(ab);
+				}
+			}
+		}
+		return lab;
+	}
 }
