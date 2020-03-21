@@ -1,14 +1,20 @@
 package org.sealsoft.bean.aktor;
 
 public class FSB14Bean extends AktorBean {
+	// Zeiten in 100ms 24 = 2,4 sekunden
+	public static int HOCH = 1;
+	public static int STOP = 0;
+	public static int RUNTER = 2;
+
 	private static final long serialVersionUID = 1624008736959842216L;
 	private int kanal = 0;
 	private boolean geschlossen = false;
 	private boolean offen = false;
 
 	private int aktuelleFahrtrichtung = 0;
+	private int aktuelleFahrzeit = 0;
 
-	private int zeitGeschlossen = 0;
+	private int zeitGeschlossen100 = 0;
 
 	private int zeitGeschlossen25 = 0;
 
@@ -17,6 +23,14 @@ public class FSB14Bean extends AktorBean {
 	private int zeitGeschlossen75 = 0;
 
 	private int wendezeit = 0;
+
+	public int getAktuelleFahrzeit() {
+		return aktuelleFahrzeit;
+	}
+
+	public void setAktuelleFahrzeit(int aktuelleFahrzeit) {
+		this.aktuelleFahrzeit = aktuelleFahrzeit;
+	}
 
 	public int getAktuelleFahrtrichtung() {
 		return aktuelleFahrtrichtung;
@@ -54,12 +68,12 @@ public class FSB14Bean extends AktorBean {
 		this.offen = offen;
 	}
 
-	public int getZeitGeschlossen() {
-		return zeitGeschlossen;
+	public int getZeitGeschlossen100() {
+		return zeitGeschlossen100;
 	}
 
-	public void setZeitGeschlossen(int zeitGeschlossen) {
-		this.zeitGeschlossen = zeitGeschlossen;
+	public void setZeitGeschlossen100(int zeitGeschlossen) {
+		this.zeitGeschlossen100 = zeitGeschlossen;
 	}
 
 	public int getZeitGeschlossen25() {
@@ -94,4 +108,17 @@ public class FSB14Bean extends AktorBean {
 		this.wendezeit = wendezeit;
 	}
 
+	public String getStringRichtung() {
+		if (aktuelleFahrtrichtung == RUNTER) {
+			return "Runter";
+		} else if (aktuelleFahrtrichtung == HOCH) {
+			return "Hoch";
+		}
+		return "Stop";
+	}
+
+	public String toString() {
+		return super.toString() + " Richtung: " + getStringRichtung() + "  Fahrzeitgeschlossen: " + aktuelleFahrzeit
+				+ "\n Offen: " + offen + "  Geschlossen: " + geschlossen;
+	}
 }
