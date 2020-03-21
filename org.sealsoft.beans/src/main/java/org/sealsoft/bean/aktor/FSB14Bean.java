@@ -13,6 +13,7 @@ public class FSB14Bean extends AktorBean {
 
 	private int aktuelleFahrtrichtung = 0;
 	private int aktuelleFahrzeit = 0;
+	private int aktuellProzentGeschlossen = 0;
 
 	private int zeitGeschlossen100 = 0;
 
@@ -23,6 +24,14 @@ public class FSB14Bean extends AktorBean {
 	private int zeitGeschlossen75 = 0;
 
 	private int wendezeit = 0;
+
+	public int getAktuellProzentGeschlossen() {
+		return aktuellProzentGeschlossen;
+	}
+
+	public void setAktuellProzentGeschlossen(int aktuellProzentGeschlossen) {
+		this.aktuellProzentGeschlossen = aktuellProzentGeschlossen;
+	}
 
 	public int getAktuelleFahrzeit() {
 		return aktuelleFahrzeit;
