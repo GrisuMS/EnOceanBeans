@@ -50,7 +50,7 @@ public class FUD14Bean extends AktorBean {
 
 	public String toString() {
 		return super.toString() + " /// FUD14 Eingeschaltet: " + getEingeschaltet() + " Dimmwert: " + getDimmwert()
-				+ "Dimmgeschwindikeit: " + getDimmgeschwindigkeit();
+				+ " Dimmgeschwindikeit: " + getDimmgeschwindigkeit();
 	}
 
 }

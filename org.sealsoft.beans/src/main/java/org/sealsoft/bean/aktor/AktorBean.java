@@ -59,5 +59,4 @@ public abstract class AktorBean extends BaseEntityBean {
 		return super.toString() + " Aktor: " + getBeschreibung() + " Adresse: " + getAdresse();
 
 	}
-
 }

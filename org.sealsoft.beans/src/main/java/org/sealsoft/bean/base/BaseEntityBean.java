@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-public abstract class BaseEntityBean implements Serializable {
+public abstract class BaseEntityBean implements Serializable, Cloneable {
 	private static final long serialVersionUID = -75862956123625545L;
 
 	private String userName;
@@ -36,6 +36,12 @@ public abstract class BaseEntityBean implements Serializable {
 
 	public void setLastUpdate(Calendar lastUpdate) {
 		this.lastUpdate = lastUpdate;
+	}
+
+	@Override
+	public Object clone() throws CloneNotSupportedException {
+		// TODO Auto-generated method stub
+		return super.clone();
 	}
 
 }
