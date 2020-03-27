@@ -4,23 +4,21 @@ public class FTKEBean extends SensorBean {
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 143553187527847300L;
-	private String zu = "F0";
-	private String offen = "E0";
+	private static final long serialVersionUID = -347610471308968130L;
+	public static byte OFFEN = (byte) 0xE0;
+	public static byte GESCHLOSSEN = (byte) 0xF0;
 
-	public String getZu() {
-		return zu;
+	private boolean geschlossen;
+
+	public boolean isGeschlossen() {
+		return geschlossen;
 	}
 
-	public void setZu(String zu) {
-		this.zu = zu;
+	public void setGeschlossen(boolean geschlossen) {
+		this.geschlossen = geschlossen;
 	}
 
-	public String getOffen() {
-		return offen;
-	}
-
-	public void setOffen(String offen) {
-		this.offen = offen;
+	public String toString() {
+		return super.toString() + "Geschlossen: " + geschlossen;
 	}
 }

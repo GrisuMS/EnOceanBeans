@@ -7,7 +7,7 @@ import org.sealsoft.bean.base.BaseEntityBean;
 import org.sealsoft.bean.sensor.SensorBean;
 
 public abstract class AktorBean extends BaseEntityBean {
-	private static final long serialVersionUID = 6608494310804145056L;
+	private static final long serialVersionUID = 7641418069275048192L;
 
 	protected String adresse = "";
 

@@ -44,4 +44,8 @@ public abstract class SensorBean extends BaseEntityBean implements Serializable 
 	public void setVirtuell(boolean virtuell) {
 		this.virtuell = virtuell;
 	}
+
+	public String toString() {
+		return beschreibung + " <<<<< ";
+	}
 }

@@ -12,8 +12,12 @@ public class FHDBean extends SensorBean {
 	}
 
 	public void setHelligkeit(int helligkeit) {
-		System.out.println("Helligkeit: " + helligkeit + " Lux");
 		this.helligkeit = helligkeit;
+	}
+
+	@Override
+	public String toString() {
+		return super.toString() + " Helligkeit: " + helligkeit + " LUX";
 	}
 
 }
