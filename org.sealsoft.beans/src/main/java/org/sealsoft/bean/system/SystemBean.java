@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.sealsoft.bean.aktor.AktorBean;
+import org.sealsoft.bean.aktor.FSR61GarageBean;
 import org.sealsoft.bean.funktion.FunktionBean;
 import org.sealsoft.bean.sensor.SensorBean;
 import org.sealsoft.bean.szene.SzeneBean;
@@ -50,6 +51,19 @@ public class SystemBean implements Serializable {
 
 	public static long getSerialversionuid() {
 		return serialVersionUID;
+	}
+
+	public AktorBean findAktorForZustandssensor(String sensorAdrresse) {
+		for (AktorBean aktor : aktoren) {
+			if (aktor instanceof FSR61GarageBean) {
+				FSR61GarageBean ak = (FSR61GarageBean) aktor;
+				if (ak.getZustandsSensor() != null
+						&& ak.getZustandsSensor().getAdresse().compareTo(sensorAdrresse) == 0) {
+					return ak;
+				}
+			}
+		}
+		return null;
 	}
 
 	/**
