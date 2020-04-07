@@ -7,7 +7,11 @@ import org.sealsoft.bean.base.BaseEntityBean;
 import org.sealsoft.bean.sensor.SensorBean;
 
 public abstract class AktorBean extends BaseEntityBean {
-	private static final long serialVersionUID = 7641418069275048192L;
+
+	private static final long serialVersionUID = 6086079713296574933L;
+	public static int PRIO_HIGH = 1;
+	public static int PRIO_MEDIUM = 2;
+	public static int PRIO_LOW = 3;
 
 	protected String adresse = "";
 
@@ -15,6 +19,7 @@ public abstract class AktorBean extends BaseEntityBean {
 
 	protected String kurzbezeichnung = "";
 	protected String beschreibung = "";
+	protected int priority = 0;
 
 	public AktorBean() {
 	}
@@ -53,6 +58,14 @@ public abstract class AktorBean extends BaseEntityBean {
 
 	public void setBeschreibung(String beschreibung) {
 		this.beschreibung = beschreibung;
+	}
+
+	public int getPriority() {
+		return priority;
+	}
+
+	public void setPriority(int priority) {
+		this.priority = priority;
 	}
 
 	public String toString() {
