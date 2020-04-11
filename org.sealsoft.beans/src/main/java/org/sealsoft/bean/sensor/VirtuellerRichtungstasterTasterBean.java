@@ -5,7 +5,9 @@ public class VirtuellerRichtungstasterTasterBean extends SensorBean {
 	* 
 	*/
 	private static final long serialVersionUID = -5794132749010703117L;
+	@SuppressWarnings("unused")
 	private static byte OBEN = (byte) 0x70;
+	@SuppressWarnings("unused")
 	private static byte UNTEN = (byte) 0x50;
 
 	private boolean oben;
