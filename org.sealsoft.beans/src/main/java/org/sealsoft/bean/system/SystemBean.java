@@ -3,8 +3,10 @@ package org.sealsoft.bean.system;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.sealsoft.bean.aktor.AktorBean;
+import org.sealsoft.bean.aktor.AktorFavoritenBean;
 import org.sealsoft.bean.aktor.FSR61GarageBean;
 import org.sealsoft.bean.funktion.FunktionBean;
 import org.sealsoft.bean.sensor.SensorBean;
@@ -16,6 +18,7 @@ public class SystemBean implements Serializable {
 	private List<SensorBean> sensoren = new ArrayList<SensorBean>();
 	private List<FunktionBean> funktionen = new ArrayList<FunktionBean>();
 	private List<SzeneBean> szenen = new ArrayList<SzeneBean>();
+	private List<AktorFavoritenBean> aktorFavoriten = new ArrayList<AktorFavoritenBean>();
 
 	public List<AktorBean> getAktoren() {
 		return aktoren;
@@ -47,6 +50,14 @@ public class SystemBean implements Serializable {
 
 	public void setSzenen(List<SzeneBean> szenen) {
 		this.szenen = szenen;
+	}
+
+	public List<AktorFavoritenBean> getAktorFavoriten() {
+		return aktorFavoriten;
+	}
+
+	public void setAktorFavoriten(List<AktorFavoritenBean> aktorFavoriten) {
+		this.aktorFavoriten = aktorFavoriten;
 	}
 
 	public static long getSerialversionuid() {
@@ -111,5 +122,9 @@ public class SystemBean implements Serializable {
 			}
 		}
 		return lab;
+	}
+
+	public Optional<AktorFavoritenBean> findAktorVavorit(String bezeichnung) {
+		return aktorFavoriten.stream().filter(a -> a.getBeschreibung().equalsIgnoreCase(bezeichnung)).findFirst();
 	}
 }

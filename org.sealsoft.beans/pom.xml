@@ -5,4 +5,19 @@
 	<groupId>org.sealsoft</groupId>
 	<artifactId>org.sealsoft.beans</artifactId>
 	<version>0.0.1</version>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.1</version>
+				<configuration>
+					<!-- Aktuell Java 1.8, da Android nur 1.8 unterstützt -->
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
 </project>
